@@ -48,3 +48,7 @@ if __name__ == '__main__':
     test_mysql()
     test_mongodb()
 #pytest test.py
+
+
+
+#pip install --upgrade mysql-connector-python
