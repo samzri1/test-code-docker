@@ -47,3 +47,4 @@ if __name__ == '__main__':
     test_postgresql()
     test_mysql()
     test_mongodb()
+#pytest test.py
