@@ -2,7 +2,6 @@ import psycopg2
 import mysql.connector
 from pymongo import MongoClient
 
-
 def test_postgresql():
     conn = psycopg2.connect(
         host="localhost",
@@ -131,11 +130,11 @@ def create_table_mysql():
 
 if __name__ == "__main__":
 
-    #create_table_mysql()
-    #create_table_postgresql()
-  #  test_postgresql_insert()
-  #  test_mysql_insert()
-  #  test_mongodb_insert()
+    create_table_mysql()
+    create_table_postgresql()
+    test_postgresql_insert()
+    test_mysql_insert()
+    test_mongodb_insert()
     
     test_postgresql()
     test_mysql()
