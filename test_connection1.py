@@ -33,23 +33,23 @@ def test_mysql():
     conn.close()
     print("MySQL test completed successfully.")
 
-def test_mongodb():
-    print("Testing MongoDB connection...")
-    client = MongoClient('mongodb://myuser:mypassword@localhost:27017/')
-    db = client['mydatabase']
-    collection = db['mycollection']
-    post = {"title": "Test post", "body": "This is a test post."}
-    post_id = collection.insert_one(post).inserted_id
-    assert post_id is not None
-    client.close()
-    print("MongoDB test completed successfully.")
+#def test_mongodb():
+#    print("Testing MongoDB connection...")
+ #   client = MongoClient('mongodb://myuser:mypassword@localhost:27017/')
+ #   db = client['mydatabase']
+ #   collection = db['mycollection']
+ #   post = {"title": "Test post", "body": "This is a test post."}
+ #   post_id = collection.insert_one(post).inserted_id
+ #   assert post_id is not None
+  #  client.close()
+  #  print("MongoDB test completed successfully.")
 
-if __name__ == '__main__':
-    test_postgresql()
-    test_mysql()
-    test_mongodb()
+#if __name__ == '__main__':
+  #  test_postgresql()
+  #  test_mysql()
+    #test_mongodb()
+
+
+
 #pytest test_connection.py
-
-
-
 #pip install --upgrade mysql-connector-python

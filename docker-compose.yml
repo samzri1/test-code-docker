@@ -22,13 +22,13 @@ services:
     ports:
       - "3306:3306"
 
-  mongodb:
-    image: mongo
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: myuser
-      MONGO_INITDB_ROOT_PASSWORD: mypassword
-    ports:
-      - "27017:27017"
+ # mongodb:
+  #  image: mongo
+ #   environment:
+  #    MONGO_INITDB_ROOT_USERNAME: myuser
+  #    MONGO_INITDB_ROOT_PASSWORD: mypassword
+   # ports:
+   #   - "27017:27017"
 
 
 #docker-compose up -d
