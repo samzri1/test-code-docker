@@ -16,6 +16,9 @@ services:
       MYSQL_USER: myuser
       MYSQL_PASSWORD: mypassword
       MYSQL_DATABASE: mydatabase
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_ALLOW_EMPTY_PASSWORD: 
+      MYSQL_RANDOM_ROOT_PASSWORD: 
     ports:
       - "3306:3306"
 
@@ -26,3 +29,6 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: mypassword
     ports:
       - "27017:27017"
+
+
+#docker-compose up -d

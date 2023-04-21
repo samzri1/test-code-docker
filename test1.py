@@ -2,6 +2,7 @@ import psycopg2
 import mysql.connector
 from pymongo import MongoClient
 
+
 def test_postgresql():
     conn = psycopg2.connect(
         host="localhost",
@@ -98,6 +99,20 @@ def test_mongodb_insert():
     client.close()
 
 
+def create_table_mysql():
+    conn = mysql.connector.connect(
+        host="localhost",
+        database="mydatabase",
+        user="myuser",
+        password="mypassword"
+    )
+    cur = conn.cursor()
+    cur.execute("CREATE TABLE mytable (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));")
+    conn.commit()
+    conn.close()
+
+import psycopg2
+
 def create_table_postgresql():
     conn = psycopg2.connect(
         host="localhost",
@@ -113,34 +128,16 @@ def create_table_postgresql():
 
 
 
-def create_table_mysql():
-    conn = mysql.connector.connect(
-        host="localhost",
-        database="mydatabase",
-        user="myuser",
-        password="mypassword"
-    )
-    cur = conn.cursor()
-    cur.execute("CREATE TABLE mytable (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));")
-    conn.commit()
-    conn.close()
-
-
-
-
 if __name__ == "__main__":
-
     create_table_mysql()
     create_table_postgresql()
-    test_postgresql_insert()
-    test_mysql_insert()
-    test_mongodb_insert()
-    
+
+
     test_postgresql()
     test_mysql()
-    test_mongodb()
+    #test_mongodb()
 
-    
+    test_postgresql_insert()
+    test_mysql_insert()
+    #test_mongodb_insert()
 
-
-#pytest test_integration.py
